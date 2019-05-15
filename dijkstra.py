@@ -1,4 +1,6 @@
 #By Andreas Edmund Pracht -> a.bit.eddie
+# Python3.7
+
 import json
 import numpy as np
 
