@@ -7,26 +7,29 @@ from heapq import *
 
 #Ziele für den Code: Einfach zu debuggen und moeglichst wenig Zeitaufwand bei Erstellung
 
-def dijkstra(edges, f, t):
-    g = defaultdict(list)
-    for l,r,c in edges:
-        g[l].append((c,r))
+def dijkstra(edges, end, start):
+    dic = defaultdict(list)
+    for a,b,c in edges:
+        dic[a].append((c,b))
 
-    q, seen, mins = [(0,f,())], set(), {f: 0}
-    while q:
-        (cost,v1,path) = heappop(q)
-        if v1 not in seen:
-            seen.add(v1)
-            path = (v1, path)
-            if v1 == t: return (cost, path)
+    p, seen, min = [(0, end, ())], set(), {end: 0}
+    while p:
+        (dist,version1,path) = heappop(p)
+        #Erster Check
+        if version1 not in seen:
+            seen.add(version1)
+            path = (version1, path)
+            if version1 == start: return (dist, path)
 
-            for c, v2 in g.get(v1, ()):
-                if v2 in seen: continue
-                prev = mins.get(v2, None)
-                next = cost + c
-                if prev is None or next < prev:
-                    mins[v2] = next
-                    heappush(q, (next, v2, path))
+            #Weiterer D2 Check
+            for c, version2 in dic.get(version1, ()):
+                if version2 in seen: continue
+                prev = min.get(version2, None)
+                next_one = dist + c
+                if prev is None or next_one < prev:
+                    min[version2] = next_one
+                    # Store
+                    heappush(p, (next_one, version2, path))
 
     return float("inf")
 
