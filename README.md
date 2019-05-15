@@ -15,3 +15,4 @@ Sende uns einfach einen Link (z.B. über Google Drive, Dropbox, GitHub…) zu De
 
 Ob Du gewonnen hast, erfährst Du per Mail und natürlich bei uns auf Facebook & Instagram.
 
+by Andreas Edmund Pracht
