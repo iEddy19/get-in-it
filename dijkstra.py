@@ -1,4 +1,5 @@
-#By Andreas Edmund Pracht -> a.bit.eddie
+# By Andreas Edmund Pracht
+# Instagram: a.bit.eddie
 # Python3.7
 
 import json
